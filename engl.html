@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center; /* Center sections */
+        }
+
+        section {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%; /* Full width of the parent container */
+            max-width: 400px; /* Reduced max-width to 50% of the previous size (from 800px to 400px) */
+            margin: 0 auto; /* Center sections horizontally */
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .description {
+            margin-top: 10px;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Expandable Section at Bottom Left */
+        #expandableSection {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #007BFF;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+            max-width: 250px;
+            width: 100%;
+        }
+
+        #expandableSection.open {
+            width: 300px; /* Expands when opened */
+        }
+
+        #expandableSection .content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        #expandableSection.open .content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Compuslive phone usage</h1>
+    </header>
+    <main>
+        <!-- Existing Sections -->
+        <section id="place1">
+            <h2>Notifications</h2>
+            <button onclick="toggleDescription('desc1')">Learn More</button>
+            <div id="desc1" class="description" style="display: none;">
+                <p>Notifications are some of the most massive problems associated with phones, each times a person sees a notification they will most probably have an instant
+                    urge to check it thus it can cause the loss of attention during work or absolutely anything else. The distraction caused by the notifications can be 
+                    removed by simply disabling the notifications in all of the unnecessary programs. Personally I recommend disabling all of the things except direct messages
+                    from the close ones.
+                </p>
+            </div>
+        </section>
+
+        <section id="place2">
+            <h2>Social media and the decrease of attention span</h2>
+            <button onclick="toggleDescription('desc2')">Learn More</button>
+            <div id="desc2" class="description" style="display: none;">
+                <p>It isnt a secret that recently with the rise of all of the short form content and social media the attention spans of millions have been greatly damaged.
+                Some of the most destructive social media platforms are tiktok, youtube shorts and instagram reels; their only goal has been 
+                to capture the viewers attention in the most ways possible. This is so distructuve because at the moment a HUGE amount of content on those
+                social medias is just an ai generated voice or a scene from cartoon playing out while in the bottom there is some satisfying or attention grabbing content playing out.
+                This is so terribble because now many young people cant even focus on the most basic stuff like school and thus cause huge damage to their lively hoods potentially loosing out on education.
+                <!--  --></p>
+            </div>
+        </section>
+
+        <!-- New Sections -->
+        <section id="place3">
+            <h2>The stress</h2>
+            <button onclick="toggleDescription('desc3')">Learn More</button>
+            <div id="desc3" class="description" style="display: none;">
+                <p>Most people cannot live a day without their phone so even when they leave their phone at one place and don't touch it for a while it 
+                    can cause stress since they could be "missing out" on important stuff which may cause anxiety in their minds.
+                </p>
+            </div>
+        </section>
+
+        <section id="place4">
+            <h2>All of the sadness</h2>
+            <button onclick="toggleDescription('desc4', )">Learn More</button>
+            <div id="desc4" class="description" style="display: none;">
+                <p>The sadness that mobile programs bring is immense, some of the biggest causes of it is when a person has a bad day and sees someone having a 
+                    good time, this will likely cause the unhappy person to be jealous and even more sad about themselves.
+                </p>
+            </div>
+            
+        </section>
+        <section id="place5">
+            <h2>The pain of relapse</h2>
+            <button onclick="toggleDescription('desc5')">Learn More</button>
+            <div id="desc5" class="description" style="display:none;">
+                <p>Many people have tried battling their phone addiction, and when they fail at a certain point,
+                     they most likely feel disappointment and relapse,
+                     which can damage their mental health in unhealthy ways.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Expandable Section (Bottom Left) -->
+    <div id="expandableSection" onclick="toggleExpandable()">
+        <h3>Ways to fix the addiction?</h3>
+        <div class="content">
+            <p>*One of the best ways to fix the addiction is by turning on the "All Grey Mode" on your phone to make it more boring.
+                *Another good way of making phones less addictive is to deleting all of the unnecessary and addictive apps. This is a good way to get rid of distractions.
+                *Finding a new hobby or activity can help reducing your screen time and actually doing something useful or not as harmful.
+                *You could also get rid of your normal phone for a while and get a dumbphone, a dumbphone has a simple messanger and a calling system so you will not miss out on 
+                communication and will most probably quickly lose interest in your phone.
+            </p>
+        </div>
+    </div>
+
+    <script src="englscript.js"></script> <!-- This links to your JavaScript file -->
+    
+    <script>
+        // Toggle description for each section
+        function toggleDescription(descriptionId, imageId) {
+            const descriptionElement = document.getElementById(descriptionId);
+            const imageElement = document.getElementById(imageId);
+
+            if (descriptionElement.style.display === 'none' || descriptionElement.style.display === '') {
+                descriptionElement.style.display = 'block'; // Show the description
+                if (imageElement) {
+                    imageElement.style.display = 'block'; // Show the image
+                }
+            } else {
+                descriptionElement.style.display = 'none'; // Hide the description
+                if (imageElement) {
+                    imageElement.style.display = 'none'; // Hide the image
+                }
+            }
+        }
+
+        // Toggle the expandable section at the bottom left
+        function toggleExpandable() {
+            const expandableSection = document.getElementById('expandableSection');
+            expandableSection.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
